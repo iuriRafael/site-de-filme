@@ -27,6 +27,7 @@ class Filme{
         this.elenco=elenco;
         this.classificacao=classificacao;
         this.avaliacao=avaliacao;
+        this.btnDetalhes=null;
     }
 
     getCard = async () => {
@@ -61,36 +62,41 @@ class Filme{
         card.appendChild(cardBody);
         cardBody.appendChild(hCardTitle);
         cardBody.appendChild(divDetalhes);
+        
+        this.setBtnDetalhes();
+        cardBody.appendChild(this.getBtnDetalhes())
+        
+        
         return card;
-      };
       
+    };
+    setBtnDetalhes= () => {
+    this.btnDetalhes=document.createElement('button');
+    this.btnDetalhes.appendChild(document.createTextNode("Detalhes"));
+    this.btnDetalhes.setAttribute("id", this.id); 
+    this.btnDetalhes.setAttribute("class", "btnDetalhesFilme");
+  }
+
+  getBtnDetalhes =() =>{
+    return this.btnDetalhes
+  }
+
+  getDetalhesFilme = () =>{
+    let divMostar = document.createElement("div");
+    divMostar.setAttribute("id","#mostar-filmes");
+
+    let car = document.createElement("car");
+    car.setAttribute("class","car");
+
+    let img 
+
+  }
+  
+  
 }
 
-/*
-btnBuscarFilme.onclick
-=
-async () => {
-if(inputBuscarFilme.value.length > 0) {
-let filmes = new Array();
-fetch("http://www.omdbapi.com/?apikey=ed5e5ad5&s="+inputBuscarFilme.value)
-.then((resp) => resp.json())
-.then((resp) => {
-resp.Search.forEach((item)=>{ console.log(item);
-let filme-new Filme(
-item.imdbID,
-item.Title,
-item.Year,
-null,
-null,
-item.Poster,
-null,
-null,
-null,
-null,
-null
-filmes.push(filme);
-www
-});
-return false;
-}
-}*/
+
+
+  
+
+

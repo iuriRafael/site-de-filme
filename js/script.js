@@ -49,3 +49,24 @@ let listarFilmes = async(filmes) =>{
     })
   }
 }
+
+let detalhesFilme = async (id) => {
+  fetch("https://www.omdbapi.com/?apikey=1b5322a&i=" + id)
+    .then((resp) => resp.json())
+    .then((resp) => {
+      let filme = new Filme(
+        resp.imdbID,
+        resp.Title,
+        resp.Year,
+        resp.Genre.slipt(","),
+        resp.Runtime,
+        resp.Poster,
+        resp.plot,
+        resp.Director,
+        resp.Actors.slipt(","),
+        resp.Awards,
+        resp.imdbRating
+      )
+      console.log(Filme);
+    });
+};
