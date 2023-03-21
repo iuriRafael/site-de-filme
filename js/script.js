@@ -37,7 +37,7 @@ btnBuscarFilmes.onclick = () => {
   return false;
 }
 
-let listarFilmes = async(filmes) =>{
+let listaFilmes = async(filmes) =>{
   let listaFilmes = await document.querySelector("#lista-filmes");
  
   listaFilmes.innerHTML = "";
@@ -70,3 +70,20 @@ let detalhesFilme = async (id) => {
       console.log(Filme);
     });
 };
+
+let listarFilmes = async (filmes) =>{
+  let listaFilmes = await document.querySelector("#lista-filmes");
+  listaFilmes.innerHTML="";
+  
+  if(filmes.length > 0){
+    filmes.forEach(async(filme) =>{
+      
+      listaFilmes.appendChild(await filme.getCard());
+      filme.getDetalhesFilme().onclick=()=>{
+        detalhesFilme(filme.id);
+      }
+    });
+  }
+}
+
+
