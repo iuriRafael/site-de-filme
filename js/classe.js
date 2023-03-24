@@ -80,69 +80,73 @@ class Filme{
 
 
   getDetalhesFilme = () =>{
+    let divTudo = document.createElement("div");
+    divTudo.setAttribute("class","principal");
+    let div = document.createElement("div")
+    div.setAttribute("class", "imagem")
+    let imagens = document.createElement("img")
+    imagens.setAttribute("src", this.cartaz);
+    imagens.setAttribute("class","img");
+    let detalhes= document.createElement("div");
+    detalhes.setAttribute("class","detalhes");
+    let card = document.createElement("div");
+    card.setAttribute("id", "card-body");
+    let titulo = document.createElement("h5");
+    titulo.setAttribute("class","titulo");
+    let ano = document.createElement("p");
+    ano.setAttribute("class","texto");
+    let genero = document.createElement("p");
+    genero.setAttribute("class","texto");
+    let duracao = document.createElement("p");
+    duracao.setAttribute("class","texto");
+    let clas = document.createElement("p");
+    clas.setAttribute("class","texto");
+    let resumo = document.createElement("p");
+    resumo.setAttribute("class","texto");
+    let rank = document.createElement("p");
+    rank.setAttribute("class","texto");
+    let elenco = document.createElement("p");
+    elenco.setAttribute("class","texto");
+    let ator = document.createElement("p");
+    ator.setAttribute("class","texto");
+    
+    
+    titulo.appendChild(document.createTextNode(this.titulo));
+    ano.appendChild(document.createTextNode(this.ano));
+    genero.appendChild(document.createTextNode(this.genero));
+    duracao.appendChild(document.createTextNode(this.duracao));
+    clas.appendChild(document.createTextNode(this.classificacao));
+    resumo.appendChild(document.createTextNode(this.sinopse));
+    rank.appendChild(document.createTextNode(this.avaliacao));
+    elenco.appendChild(document.createTextNode(this.direcao));
+    ator.appendChild(document.createTextNode(this.elenco));
 
-    let detalheCard = document.createElement("div");
-    detalheCard.setAttribute("class","detalheCard");
-        
-    let imgDetalheDiv = document.createElement("div");
-    imgDetalheDiv.setAttribute("class","imgDetalheDiv");
+    
+    detalhes.appendChild(titulo);
+    detalhes.appendChild(ano);
+    detalhes.appendChild(genero);
+    detalhes.appendChild(duracao);
+    detalhes.appendChild(clas)
+    detalhes.appendChild(resumo);
+    detalhes.appendChild(rank);
+    detalhes.appendChild(elenco);
+    detalhes.appendChild(ator);
+    div.appendChild(imagens);
+    detalhes.appendChild(card);
+    divTudo.appendChild(div);
+    divTudo.appendChild(detalhes);
 
-    let detalheImg = document.createElement("detalheimg");
-    detalheImg.setAttribute("src",this.cartaz);
+    let btnSalvar=document.createElement('button');
+    btnSalvar.appendChild(document.createTextNode('Salvar'));
+    btnSalvar.setAttribute('id', 'btnSalvar');
+    divTudo.appendChild(btnSalvar);
 
-    let tituloResumo = document.createElement("h1");
-    tituloResumo.setAttribute("class","TituloDetalhe");
-    tituloResumo.appendChild(document.createTextNode(this.titulo));
+    let btnFechar=document.createElement('button');
+    btnFechar.appendChild(document.createTextNode('Fechar'));
+    btnFechar.setAttribute('id', 'btnFechar');
+    divTudo.appendChild(btnFechar)
 
-    let detalheText = document.createElement("div");
-    detalheText.setAttribute("class","detalheText");
-
-    let anoResumo = document.createElement("br");
-    anoResumo.setAttribute("class","anoResumo");
-    anoResumo.appendChild(document.createTextNode("Ano: "+this.ano));
-
-    let generoResumo = document.createElement("br");
-    generoResumo.setAttribute("class","generoResumo");
-    generoResumo.appendChild(document.createTextNode("Gênero: "+this.genero));
-
-    let duracaoResumo = document.createElement("br");
-    duracaoResumo.setAttribute("class","duracaoResumo");
-    duracaoResumo.appendChild(document.createTextNode("Duração: "+this.duracao));
-
-    let diretorResumo = document.createElement("br");
-    diretorResumo.setAttribute("class","diretorResumo");
-    diretorResumo.appendChild(document.createTextNode("Direção: "+this.direcao));
-
-    let atoresResumo = document.createElement("br");
-    atoresResumo.setAttribute("class","atoresResumo");
-    atoresResumo.appendChild(document.createTextNode("Elenco: "+this.elenco));
-
-    let awardsResumo = document.createElement("br");
-    awardsResumo.setAttribute("class","awardsResumo");
-    awardsResumo.appendChild(document.createTextNode("Prêmios: "+this.awards));
-
-    let avaliacaoResumo = document.createElement("br");
-    avaliacaoResumo.setAttribute("class","avaliacaoResumo");
-    avaliacaoResumo.appendChild(document.createTextNode("Avaliação: "+this.avaliacao));
-
-    let plotResumo= document.createElement("br");
-    plotResumo.setAttribute("class","plotResumo");
-    plotResumo.appendChild(document.createTextNode("Sinopse: "+this.sinopse));
-
-
-    listaFilmes.appendChild(detalheCard);
-    imgDetalheDiv.appendChild(detalheImg);
-    detalheCard.appendChild(imgDetalheDiv);
-    detalheCard.appendChild(detalheText);
-    detalheText.appendChild(tituloResumo);
-    detalheText.appendChild(anoResumo);
-    detalheText.appendChild(generoResumo);
-    detalheText.appendChild(duracaoResumo);
-    detalheText.appendChild(diretorResumo);
-    detalheText.appendChild(atoresResumo);
-    detalheText.appendChild(awardsResumo);
-    detalheText.appendChild(avaliacaoResumo);
-    detalheText.appendChild(plotResumo);
+    return divTudo;
 
   
   }

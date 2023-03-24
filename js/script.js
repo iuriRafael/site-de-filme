@@ -75,9 +75,10 @@ let detalhesFilme = async (id) => {
           resp.Awards,
           resp.imdbID
       );
-      document.querySelector("#mostrar-filmes").appendChild(filme.getDetalhesFilme());
       document.querySelector("#lista-filmes").style.display="none";
       document.querySelector("#mostrar-filmes").style.display="flex";   
+
+      document.querySelector("#mostrar-filmes").appendChild(filme.getDetalhesFilme());  
   });
 }
 
