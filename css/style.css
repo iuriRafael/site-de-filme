@@ -28,9 +28,12 @@ header{
     margin: 10px;
 }
 
-.btnDetalhesFilme{
-   
+.detalheCard{
+    background-color: #191970;
 }
+
+
+
 @media screen and (max-width: 500px){
 
     .navbar>.container-fluid{
