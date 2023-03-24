@@ -65,15 +65,15 @@ let detalhesFilme = async (id) => {
           resp.Title,
           resp.Year,
           resp.Genre.split(","),
+          resp.Poster,
           resp.Runtime,
           resp.Plot,
-          resp.Poster,
           resp.Director,
           resp.Actors.split(","),
           resp.Awards,
-          resp.imdbRating,
-          resp.Awards,
-          resp.imdbID
+          resp.imdbRating
+
+    
       );
       document.querySelector("#lista-filmes").style.display="none";
       document.querySelector("#mostrar-filmes").style.display="flex";   
