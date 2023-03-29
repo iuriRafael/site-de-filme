@@ -75,10 +75,19 @@ let detalhesFilme = async (id) => {
 
     
       );
-      document.querySelector("#lista-filmes").style.display="none";
-      document.querySelector("#mostrar-filmes").style.display="flex";   
+      document.querySelector("#mostrar-filmes").appendChild(filme.getDetalhesFilme());
+      
+      document.querySelector("#btnFechar").onclick = () =>{
+        document.querySelector("#lista-filmes").style.display="flex";
+        document.querySelector("#mostrar-filmes").innerHTML="";
+        document.querySelector("#mostrar-filmes").style.display="none";
+      }
+      document.querySelector("#btnSalvar").onclick = () =>{
+        salvarFilme(filme);
+      }
 
-      document.querySelector("#mostrar-filmes").appendChild(filme.getDetalhesFilme());  
+      document.querySelector("#lista-filmes").style.display="none";
+      document.querySelector("#mostrar-filmes").style.display="flex";       
   });
 }
 
