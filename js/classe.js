@@ -35,6 +35,7 @@ class Filme{
         let card = document.createElement("div");
         card.setAttribute("class", "card");
         let imgCartaz = document.createElement("img");
+        //iuri
         imgCartaz.setAttribute("class", "card-img-topz");
         imgCartaz.setAttribute("src", this.cartaz);
         let cardBody = document.createElement("div");
@@ -89,6 +90,7 @@ class Filme{
     detalhes.setAttribute("class","detalhes");
     let card = document.createElement("div");
     card.setAttribute("id", "card-body");
+    //iuri 
     let titulo = document.createElement("h5");
     titulo.setAttribute("class","titulo");
     let ano = document.createElement("p");
@@ -113,6 +115,7 @@ class Filme{
     ano.appendChild(document.createTextNode(this.ano));
     genero.appendChild(document.createTextNode(this.genero));
     duracao.appendChild(document.createTextNode(this.duracao));
+    //iuri
     clas.appendChild(document.createTextNode(this.classificacao));
     resumo.appendChild(document.createTextNode(this.sinopse));
     rank.appendChild(document.createTextNode(this.avaliacao));
@@ -138,6 +141,7 @@ class Filme{
     let btnSalvar=document.createElement('button');
     btnSalvar.appendChild(document.createTextNode('Salvar'));
     btnSalvar.setAttribute('id', 'btnSalvar');
+    //iuri Rafael Dutra
     divTudo.appendChild(btnSalvar);
 
     let btnDesfavoritar = document.createElement('button');
@@ -150,16 +154,27 @@ class Filme{
     btnFechar.setAttribute('id', 'btnFechar');
     divTudo.appendChild(btnFechar)
 
-    return divTudo;
+    let btnEditar=document.createElement('button');
+    btnEditar.appendChild(document.createTextNode('Editar'));
+    btnEditar.setAttribute('id', 'btnEditar');
+    divTudo.appendChild(btnEditar)
 
+    return divTudo;
   }
 
   getBtnDetalhes =() =>{
     return this.btnDetalhes
   }
+
+  editarFilme = () => {
+
+    let labelTitulo =document.createElement("label");
+    let inuptTitulo = document.createElement("input");
+    
+    
+    }
+
 }
-
-
 
 
 

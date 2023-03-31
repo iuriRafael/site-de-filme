@@ -54,7 +54,7 @@ let listarFilmes = async(filmes) =>{
     });
   }
 }
-
+//iuri
 let detalhesFilme = async (id) => {
   fetch("https://www.omdbapi.com/?apikey=1b5322a&i=" + id)
   .then((resp) => resp.json())
@@ -92,7 +92,7 @@ let detalhesFilme = async (id) => {
         localStorage.setItem("filmesFavoritos", filmes);
         listarFavoritos(); 
       }
-
+      //iuri
       document.querySelector("#btnSalvar").onclick = () =>{
        let filmesString = localStorage.getItem("filmesFavoritos");
        var filmes = new Array();
@@ -100,7 +100,7 @@ let detalhesFilme = async (id) => {
          filmes = JSON.parse(filmesString);
        }
        if (filmes.some(filmeSalvo => filmeSalvo.id === filme.id)) {
-        alert("O filme esta salvo");
+        alert("O filmejá esta salvo nos FAVORITOS");
         return;
       }
        filmes.push(filme);
@@ -142,6 +142,7 @@ let listarFavoritos =()=>{
    });
   listarFilmes(filmes);
 }
+
 
 
 

@@ -2,36 +2,32 @@
 
   
 
-
-/* Estilos padrão para tela grande */
 .imagem {
   float: left;
-  margin-right: 20px;
+  
 }
 
 .detalhes {
   overflow: hidden;
+  padding-left: 20px;
 }
 
 .texto {
   margin-bottom: 10px;
 }
 
-.btnSalvar, .btnDesfavoritar, .btnFechar {
-  display: inline-block;
-  margin-right: 10px;
-}
 
 #btnSalvar,
 #btnDesfavoritar,
-#btnFechar {
+#btnFechar,
+#btnEditar{
   background-color: #333;
   color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-right: 10px;
+  margin-left: 30px;
 }
 
 #btnSalvar:hover,
@@ -43,19 +39,13 @@
 
 @media (max-width: 767px) {
   
-  .principal{
-      
+  .imagem{
+    text-align: center;
   }
-
-
+  
   .detalhes {
     margin-top: 0;
   }
-
-  .img {
-    text-align:center
-  }
-  
   .imagem {
     float: none;
     margin-right: 0;
@@ -63,9 +53,7 @@
   }
 
   .btnSalvar, .btnDesfavoritar, .btnFechar {
-    display: block;
-    margin-right: 0;
-    margin-bottom: 10px;
+    text-align: center;
   }
 }
 
