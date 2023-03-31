@@ -134,10 +134,16 @@ class Filme{
     divTudo.appendChild(div);
     divTudo.appendChild(detalhes);
 
+    
     let btnSalvar=document.createElement('button');
     btnSalvar.appendChild(document.createTextNode('Salvar'));
     btnSalvar.setAttribute('id', 'btnSalvar');
     divTudo.appendChild(btnSalvar);
+
+    let btnDesfavoritar = document.createElement('button');
+    btnDesfavoritar.appendChild(document.createTextNode('Desfavoritar'));
+    btnDesfavoritar.setAttribute('id', 'btnDesfavoritar');
+    divTudo.appendChild(btnDesfavoritar);
 
     let btnFechar=document.createElement('button');
     btnFechar.appendChild(document.createTextNode('Fechar'));
@@ -146,7 +152,6 @@ class Filme{
 
     return divTudo;
 
-  
   }
 
   getBtnDetalhes =() =>{

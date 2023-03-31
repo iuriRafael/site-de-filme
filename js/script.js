@@ -81,12 +81,28 @@ let detalhesFilme = async (id) => {
         document.querySelector("#mostrar-filmes").innerHTML="";
         document.querySelector("#mostrar-filmes").style.display="none";
       }
+      document.querySelector("#btnDesfavoritar").onclick = () => {
+        let filmesString = localStorage.getItem("filmesFavoritos");
+        var filmes = new Array();
+        if (localStorage.hasOwnProperty("filmesFavoritos")) {
+          filmes = JSON.parse(filmesString);
+        }
+        filmes = filmes.filter((f) => f.id !== filme.id); 
+        filmes = JSON.stringify(filmes);
+        localStorage.setItem("filmesFavoritos", filmes);
+        listarFavoritos(); 
+      }
+
       document.querySelector("#btnSalvar").onclick = () =>{
        let filmesString = localStorage.getItem("filmesFavoritos");
        var filmes = new Array();
        if(localStorage.hasOwnProperty("filmesFavoritos")){
          filmes = JSON.parse(filmesString);
        }
+       if (filmes.some(filmeSalvo => filmeSalvo.id === filme.id)) {
+        alert("O filme esta salvo");
+        return;
+      }
        filmes.push(filme);
        filmes=JSON.stringify(filmes);
        localStorage.setItem("filmesFavoritos",filmes);
