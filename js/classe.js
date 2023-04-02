@@ -16,7 +16,8 @@ class Diretor
 
 
 class Filme{
-    constructor(id,titulo,ano,genero,cartaz,sinopse,duracao,direcao,elenco,classificacao,avaliacao){
+
+    constructor(id,titulo,ano,genero,cartaz,sinopse,duracao,direcao,elenco,classificacao,avaliacao,){
         this.id=id;
         this.titulo=titulo;
         this.ano=ano;
@@ -29,6 +30,7 @@ class Filme{
         this.classificacao=classificacao;
         this.avaliacao=avaliacao;
         this.btnDetalhes=null;
+       
     }
 
     getCard = async () => {
@@ -166,14 +168,59 @@ class Filme{
     return this.btnDetalhes
   }
 
-  editarFilme = () => {
+  
+   editarFilme = () => {
+        
+    let divDetalhes = document.createElement("div");
+    divDetalhes.setAttribute("id", "detalhes");
+    divDetalhes.setAttribute("class", "rom-3");
+    let detalhes = document.createElement("div");
+    detalhes.setAttribute("class", "row");
+    let card = document.createElement("div");
+    card.setAttribute("class", "col-md-4");
+    let imagem = document.createElement("img");
+    imagem.setAttribute("src", this.cartaz);
+    imagem.setAttribute("class", "img-fluid");
+    let novadiv = document.createElement("div");
+    novadiv.setAttribute("id", "nova");
+    novadiv.setAttribute("class", "col-md-8");
+    let body = document.createElement("div");
+    body.setAttribute("class", "card-body");
+    let titulo = document.createElement("h5");
+    titulo.setAttribute("class", "card-title");
+    titulo.appendChild(document.createTextNode("Titulo:"));
+    let inputT = document.createElement("input");
+    inputT.setAttribute("class", "form-control");
+    inputT.setAttribute("id", "inputT");
+    let sinopse = document.createElement("p");
+    sinopse.setAttribute("class", "card-title");
+    sinopse.appendChild(document.createTextNode("Sinopse:"));
+    let inputS = document.createElement("textarea");
+    inputS.setAttribute("class", "form-control me-2");
+    inputS.setAttribute("id", "inputS");
+    divDetalhes.appendChild(card);
+    divDetalhes.appendChild(detalhes);
+    detalhes.appendChild(card);
+    card.appendChild(imagem);
+    detalhes.appendChild(novadiv);
+    detalhes.appendChild(body);
+    body.appendChild(titulo);
+    body.appendChild(inputT);
+    body.appendChild(sinopse);
+    body.appendChild(inputS);
 
-    let labelTitulo =document.createElement("label");
-    let inuptTitulo = document.createElement("input");
     
-    
-    }
+    let btnSalvar=document.createElement('button');
+    btnSalvar.appendChild(document.createTextNode('Salvar'));
+    btnSalvar.setAttribute('id', 'btnSalvarTudo');
+    //iuri Rafael Dutra
+    divDetalhes.appendChild(btnSalvar);
 
+    
+    return divDetalhes;
+
+  }
+    
 }
 
 

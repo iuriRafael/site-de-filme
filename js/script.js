@@ -76,7 +76,7 @@ let detalhesFilme = async (id) => {
       );
       document.querySelector("#mostrar-filmes").appendChild(filme.getDetalhesFilme());
       
-      document.querySelector("#btnFechar").onclick = () =>{
+        document.querySelector("#btnFechar").onclick = () =>{
         document.querySelector("#lista-filmes").style.display="flex";
         document.querySelector("#mostrar-filmes").innerHTML="";
         document.querySelector("#mostrar-filmes").style.display="none";
@@ -107,11 +107,34 @@ let detalhesFilme = async (id) => {
        filmes=JSON.stringify(filmes);
        localStorage.setItem("filmesFavoritos",filmes);
       }
+      
+       document.querySelector("#btnEditar").onclick = () => {
+        document.querySelector("#lista-filmes").style.display = "none";
+        document.querySelector("#mostrar-filmes").innerHTML = "";
+        document.querySelector("#mostrar-filmes").appendChild(filme.editarFilme());
 
+        document.querySelector("#btnSalvarTudo").onclick = ()=>{
+        let inputT = document.querySelector("#inputT");
+        let inputS = document.querySelector("#inputS");
+     
+        let filme = JSON.parse(localStorage.getItem("filme"));
+
+        filme.titulo = inputT.value;
+        filme.sinopse = inputS.value;
+
+        localStorage.setItem("filme", JSON.stringify(filme));
+
+        listarFavoritos();
+
+        }
+      };
+      
       document.querySelector("#lista-filmes").style.display="none";
       document.querySelector("#mostrar-filmes").style.display="flex";       
   });
 }
+
+
 
 navFavoritos.onclick =() =>{
   listarFavoritos();
@@ -137,11 +160,12 @@ let listarFavoritos =()=>{
     item.classificacao,
     item.avaliacao
   );
+  
   filmes.push(filme);
 
    });
   listarFilmes(filmes);
-}
+};
 
 
 

@@ -1,7 +1,4 @@
 
-
-  
-
 .imagem {
   float: left;
   
@@ -21,13 +18,13 @@
 #btnDesfavoritar,
 #btnFechar,
 #btnEditar{
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-left: 30px;
+  background-color: #007bff; /* cor de fundo */
+  color: #fff; /* cor do texto */
+  padding: 10px 20px; /* espaçamento interno */
+  border: none; /* sem borda */
+  border-radius: 4px; /* borda arredondada */
+  cursor: pointer; /* cursor de mão */
+  margin-right: 10px;
 }
 
 #btnSalvar:hover,
